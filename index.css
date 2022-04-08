@@ -1,0 +1,312 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --font-family: 'noe-display', sans-serf;
+    --normal-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bg-color: #fcfcfc;
+    --primary-color: #021017;
+    --secondary-color: #edf7ef;
+    --primary-shadow: #8b8eaf;
+    --secondary-shadow: #a17a69;
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+    --transition: 0.3s;
+  }
+
+/* Reset the CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+html {
+    background-color: var(--secondary-color);
+}
+
+/* Scroll Bar CSS */
+.scrollUp {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    cursor: pointer;
+}
+
+.upArrow {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+
+/* Navigation Bar CSS */
+nav {
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 1;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    opacity: .8;
+}
+
+nav h1 {
+    color: var(--primary-color);
+}
+
+nav a {
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    font-size: var(--bold-font);
+    color: #0f2661;
+    border-bottom: 2px solid #0f2661;
+}
+
+nav ul{
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li {
+    font-weight: 700;
+}
+
+nav button {
+    border: 0;
+    cursor: pointer;
+    display: none;
+}
+
+/* Bio CSS */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    margin: auto;
+    height: 100vh;
+    width: 100vw;
+}
+
+.title img {
+    height: 20rem;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.bio {
+    width: 30rem;
+    padding: .69rem;
+    border-radius: 6px;    
+}
+
+.bio h2 {
+    font-size: 4rem;
+    overflow: hidden;
+    border-right: .1em solid var(--primary-color); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: 
+        typing 3s steps(40, end),
+        blink-caret .2s step-end 15;
+}
+
+.bio p {
+    line-height: var(--line-height);
+    padding: 0.3rem 0;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color); }
+}
+
+/* About Me CSS */
+.aboutMe {
+    background-color: var(--secondary-color);
+    padding: 1rem 6rem;
+}
+
+.aboutMe h3 {
+    margin-bottom: var(--bottom-margin);
+    text-align: center;
+}
+
+.aboutMe p {
+    line-height: var(--line-height);
+    padding: 0.5rem;
+}
+
+/* Projects CSS */
+.projects {
+    padding: 32px 0;
+    margin-top: 2rem;
+}
+
+.projectsTitle {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.projectsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectContainer {
+    text-align: center;
+    width: 22rem;
+    padding: 1rem;
+}
+
+.projectContainer p {
+    padding: 0.5rem;
+}
+
+.projectTitle {
+    margin-bottom: var(--bottom-margin);
+}
+
+.projectDetails {
+    margin-bottom: var(--bottom-margin);
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Footer CSS */
+footer {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    text-align: center;
+    margin: 1rem 0 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer ul {
+    display: flex;
+    justify-content: left;
+    gap: 2rem;
+}
+
+footer img {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Media Query CSS */
+@media screen and (max-width: 720px) {
+    nav {
+        background-color: white;
+        padding: 1.5rem 1rem;
+    }
+
+    nav ul {
+        position: fixed;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        top: 83px;
+        left: 0%;
+        width: 100%;
+        text-align: center;
+        transform: translateX(120%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    nav ul li {
+        margin: 8px;
+    }
+
+    .navButton {
+        display: block;
+    }
+    nav ul.show {
+        transform: translateX(0);
+    }
+
+    .title {
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .title img {
+        height: 25rem;
+        width: 25rem;
+    }
+
+    .bio {
+        margin-top: 5rem;
+        width: 30rem;
+        align-self: center;
+    }
+
+    .aboutMe {
+        margin-top: 2rem;
+        padding: 1rem 3.5rem;
+    }
+
+    .aboutMe h3 {
+        text-align: center;
+    }
+
+    .aboutMe p {
+        text-align: justify;
+    }
+
+    .projectsContainer {
+        flex-direction: column;
+    }
+    .projectContainer {
+        width: 21rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .title img {
+        height: 20rem;
+        width: 20rem;
+    }
+    .bio {
+        width: 20rem;
+    }
+
+    .projectContainer {
+        width: 16rem;
+    }
+
+}
