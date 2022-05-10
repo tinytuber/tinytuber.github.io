@@ -180,9 +180,17 @@ nav button {
     justify-content: center;
 }
 
+.projectsContainer a{
+    color: black
+}
+
+.projectsContainer a:hover {
+    text-decoration: underline;
+}
+
 .projectContainer {
     text-align: center;
-    width: 22rem;
+    width: 20rem;
     padding: 1rem;
 }
 
@@ -303,6 +311,9 @@ footer img {
     }
     .bio {
         width: 20rem;
+    }
+    .bio h2{
+        font-size: 2rem;
     }
 
     .projectContainer {
