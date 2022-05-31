@@ -7,9 +7,9 @@ html {
     --normal-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
-    --bg-color: #fcfcfc;
-    --primary-color: #021017;
-    --secondary-color: #edf7ef;
+    --bg-color: #bfbfbf;
+    --primary-color: #0b0a29;
+    --secondary-color: #f7f7f7;
     --primary-shadow: #8b8eaf;
     --secondary-shadow: #a17a69;
     --bottom-margin: 0.5rem;
@@ -32,7 +32,8 @@ a {
 }
 
 html {
-    background-color: var(--secondary-color);
+    background-color: var(--bg-color);
+    color: var(--primary-color)
 }
 
 /* Scroll Bar CSS */
