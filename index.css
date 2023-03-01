@@ -3,11 +3,11 @@ html {
 }
 
 :root {
-    --font-family: 'noe-display', sans-serf;
+    --font-family: 'roboto', sans-serf;
     --normal-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
-    --bg-color: #bfbfbf;
+    --bg-color: white;
     --primary-color: #0b0a29;
     --secondary-color: #f7f7f7;
     --primary-shadow: #8b8eaf;
@@ -22,7 +22,6 @@ html {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 ul {
     list-style-type: none;
@@ -54,21 +53,32 @@ html {
 /* Navigation Bar CSS */
 nav {
     position: fixed;
-    top: 0;
+    top:0;
     left:0;
-    z-index: 1;
-    width: 100vw;
+    width:25%;
+    height:100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 2rem 4rem;
-    background-color: var(--secondary-color);
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    opacity: .8;
+    justify-content: space-around;
+    padding: 5rem;
 }
 
-nav h1 {
-    color: var(--primary-color);
+nav img {
+    height: 15rem;
+    width: 15rem;
+    padding: 0rem;
+    border-radius: 50%;
+}
+.navigate {
+    display: inline-block;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 nav a {
@@ -97,51 +107,52 @@ nav button {
     display: none;
 }
 
+
 /* Bio CSS */
+main {
+  margin-left:25%;
+  background-image: radial-gradient(#CBC9C9 6%, transparent 1%);
+  background-size: 20px 20px;
+  background-position: 0 0, 100px 100px;
+  background-repeat: repeat;
+}
+
 .title {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 1rem;
-    margin: auto;
+    justify-content: flex-start;
     height: 100vh;
-    width: 100vw;
-}
-
-.title img {
-    height: 20rem;
-    width: 20rem;
-    padding: 1rem;
-    border-radius: 50%;
-}
-
-.bio {
-    width: 30rem;
-    padding: .69rem;
-    border-radius: 6px;    
+    width: 100%;
+    padding-left: 6rem;
+    border-bottom: 5px solid navy;
 }
 
 .bio h2 {
-    font-size: 4rem;
+    font-size: 7rem;
     overflow: hidden;
     border-right: .1em solid var(--primary-color); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    animation: 
+    animation:
         typing 3s steps(40, end),
         blink-caret .2s step-end 15;
 }
 
 .bio p {
     line-height: var(--line-height);
-    padding: 0.3rem 0;
+    padding: 2rem 0;
+    font-size: 1.5em;
+}
+
+.bio1 {
+
 }
 
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
-  
+
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
@@ -150,35 +161,49 @@ nav button {
 
 /* About Me CSS */
 .aboutMe {
-    background-color: var(--secondary-color);
-    padding: 1rem 6rem;
+    padding: 5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding-left: 6rem;
+    justify-content: space-around;
+    border-bottom: 5px solid navy;
 }
 
 .aboutMe h3 {
     margin-bottom: var(--bottom-margin);
     text-align: center;
+    font-size: 3em;
 }
 
 .aboutMe p {
     line-height: var(--line-height);
-    padding: 0.5rem;
+    font-size:1.5em;
+    line-height: normal;
 }
 
 /* Projects CSS */
 .projects {
     padding: 32px 0;
     margin-top: 2rem;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .projectsTitle {
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 3em;
 }
 
 .projectsContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .projectsContainer a{
@@ -215,24 +240,27 @@ nav button {
 }
 
 /* Footer CSS */
-footer {
-    background-color: var(--secondary-color);
-    padding: 1rem;
+.contact {
+    background-color: #CBC9C9;
+    padding-top: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     text-align: center;
-    margin: 1rem 0 0;
     color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size:1em;
 }
 
-footer ul {
+.contact ul {
     display: flex;
     justify-content: left;
+    align: center;
     gap: 2rem;
 }
 
-footer img {
+.contact img {
     width: 2rem;
     height: 2rem;
 }
@@ -240,8 +268,9 @@ footer img {
 /* Media Query CSS */
 @media screen and (max-width: 720px) {
     nav {
-        background-color: white;
-        padding: 1.5rem 1rem;
+      border: 0;
+      cursor: pointer;
+      display: none;
     }
 
     nav ul {
@@ -255,7 +284,7 @@ footer img {
         transform: translateX(120%);
         transition: transform 0.5s ease-in;
     }
-    
+
     nav ul li {
         margin: 8px;
     }
@@ -267,12 +296,23 @@ footer img {
         transform: translateX(0);
     }
 
-    .title {
-        margin-top: 1rem;
-        flex-direction: column;
-        gap: 0;
+    main {
+      margin-left: 0%;
     }
 
+    .title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title h2 {
+      font-size: 2em;
+    }
+
+    .title p {
+      font-size: 1em;
+      line-height: 1rem;
+    }
     .title img {
         height: 25rem;
         width: 25rem;
@@ -291,14 +331,29 @@ footer img {
 
     .aboutMe h3 {
         text-align: center;
+        font-size: 2em;
     }
 
     .aboutMe p {
         text-align: justify;
+        font-size: 1em;
+    }
+
+    .projects {
+      margin-top: 2rem;
+      padding: 1rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .projectsTitle {
+      font-size: 2em
     }
 
     .projectsContainer {
         flex-direction: column;
+        font-size: 1em;
     }
     .projectContainer {
         width: 21rem;
@@ -314,7 +369,7 @@ footer img {
         width: 20rem;
     }
     .bio h2{
-        font-size: 2rem;
+        font-size: 2em;
     }
 
     .projectContainer {
